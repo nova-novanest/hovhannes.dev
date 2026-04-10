@@ -3,555 +3,494 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hovhannes Hovhannisyan — Founder, Novanest Pro</title>
-<meta name="description" content="Solo founder running a US home services business from Barcelona with AI. Real revenue, real customers, zero office.">
+<title>Hovhannes Hovhannisyan</title>
+<meta name="description" content="I built an AI that gets solo service pros their next job while they’re still doing the last one.">
+<meta property="og:title" content="Hovhannes Hovhannisyan">
+<meta property="og:description" content="I built an AI that gets solo service pros their next job while they’re still doing the last one.">
+<meta property="og:url" content="https://hovhannes.dev">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg: #0a0a0a;
-    --surface: #111111;
-    --border: #1a1a1a;
-    --text: #ededed;
-    --text-secondary: #888888;
-    --accent: #3b82f6;
-    --accent-dim: rgba(59, 130, 246, 0.1);
+    --bg: #f4efe7;
+    --paper: #fffdf9;
+    --ink: #111111;
+    --muted: #5d584f;
+    --line: rgba(17,17,17,0.12);
+    --accent: #0f62fe;
+    --accent-soft: rgba(15,98,254,0.08);
+    --good: #1d7a50;
+    --max: 1120px;
   }
 
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg);
-    color: var(--text);
-    line-height: 1.6;
+    color: var(--ink);
     -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
   }
 
-  .container {
-    max-width: 720px;
+  ::selection { background: var(--accent); color: #fff; }
+
+  a { color: inherit; text-decoration: none; }
+
+  .page {
+    max-width: var(--max);
     margin: 0 auto;
-    padding: 0 24px;
+    padding: 20px;
   }
 
-  /* Nav */
-  nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background: rgba(10, 10, 10, 0.8);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border);
-  }
-
-  nav .container {
+  .topbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 56px;
+    align-items: center;
+    gap: 16px;
+    padding: 4px 0 22px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 22px;
   }
 
-  nav .logo {
-    font-weight: 600;
-    font-size: 15px;
-    letter-spacing: -0.3px;
-    color: var(--text);
-    text-decoration: none;
+  .topbar-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
   }
 
-  nav .links {
+  .topbar-links {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 0.82rem;
+    color: var(--muted);
   }
 
-  nav .links a {
-    font-size: 13px;
-    color: var(--text-secondary);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  nav .links a:hover { color: var(--text); }
-
-  /* Hero */
   .hero {
-    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+
+  .panel {
+    background: var(--paper);
+    border: 1px solid var(--line);
+  }
+
+  .hero-copy {
+    padding: 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding-top: 56px;
+    justify-content: space-between;
+    min-height: 620px;
   }
 
-  .hero .label {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--accent);
-    background: var(--accent-dim);
-    padding: 6px 14px;
-    border-radius: 100px;
-    border: 1px solid rgba(59, 130, 246, 0.15);
-    margin-bottom: 28px;
-    width: fit-content;
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-bottom: 18px;
   }
 
-  .hero .label .dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
+  h1 {
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(3rem, 6vw, 5.4rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    max-width: 10ch;
+    margin-bottom: 24px;
   }
 
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+  .deck {
+    font-size: 1.05rem;
+    line-height: 1.85;
+    color: var(--muted);
+    max-width: 62ch;
   }
 
-  .hero h1 {
-    font-size: clamp(40px, 7vw, 64px);
+  .deck strong {
+    color: var(--ink);
     font-weight: 700;
-    letter-spacing: -2px;
-    line-height: 1.05;
-    margin-bottom: 20px;
   }
 
-  .hero .subtitle {
-    font-size: clamp(17px, 2.5vw, 20px);
-    color: var(--text-secondary);
-    max-width: 560px;
+  .summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px 24px;
+    margin-top: 28px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line);
+  }
+
+  .summary-label {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 6px;
+    font-weight: 700;
+  }
+
+  .summary-value {
+    font-size: 1rem;
     line-height: 1.5;
+    font-weight: 700;
   }
 
-  .hero .subtitle strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  .scroll-hint {
-    margin-top: 60px;
+  .hero-proof {
+    overflow: hidden;
     display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    color: var(--text-secondary);
-    opacity: 0.5;
-    animation: float 3s ease-in-out infinite;
+    flex-direction: column;
   }
 
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(6px); }
+  .hero-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: center 22%;
+    display: block;
+    border-bottom: 1px solid var(--line);
   }
 
-  /* Sections */
-  section {
-    padding: 100px 0;
+  .proof-body {
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
   }
 
-  section + section {
-    border-top: 1px solid var(--border);
+  .proof-kicker {
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--good);
+  }
+
+  .proof-copy {
+    font-size: 0.98rem;
+    line-height: 1.75;
+    color: var(--muted);
+  }
+
+  .proof-copy strong {
+    color: var(--ink);
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .metric {
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+
+  .metric-number {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .metric-label {
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    margin-bottom: 22px;
+  }
+
+  .card {
+    padding: 28px;
   }
 
   .section-label {
-    font-size: 11px;
+    font-size: 0.72rem;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--text-secondary);
-    margin-bottom: 32px;
-    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+    margin-bottom: 18px;
   }
 
   .section-title {
-    font-size: clamp(28px, 4vw, 36px);
+    font-family: 'Instrument Serif', Georgia, serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 0.98;
+    letter-spacing: -0.035em;
+    margin-bottom: 16px;
+  }
+
+  .body-copy {
+    font-size: 1rem;
+    line-height: 1.85;
+    color: var(--muted);
+  }
+
+  .body-copy strong {
+    color: var(--ink);
     font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 24px;
-    line-height: 1.15;
   }
 
-  .prose {
-    font-size: 16px;
-    color: var(--text-secondary);
-    line-height: 1.7;
+  .quote {
+    margin-top: 22px;
+    padding: 18px 18px 18px 20px;
+    background: var(--accent-soft);
+    border-left: 3px solid var(--accent);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--ink);
   }
 
-  .prose p + p {
-    margin-top: 16px;
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 22px;
   }
 
-  .prose strong {
-    color: var(--text);
-    font-weight: 500;
-  }
-
-  /* Stats */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    overflow: hidden;
-    margin: 40px 0;
-  }
-
-  .stat {
-    background: var(--surface);
-    padding: 28px 24px;
-    text-align: center;
-  }
-
-  .stat .number {
-    font-size: 28px;
+  .step {
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: #fff;
+    font-size: 0.82rem;
     font-weight: 700;
-    letter-spacing: -1px;
-    color: var(--text);
-    margin-bottom: 4px;
   }
 
-  .stat .desc {
-    font-size: 12px;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-  }
-
-  /* Pipeline */
-  .pipeline {
+  .timeline {
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin: 40px 0;
-  }
-
-  .pipeline-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 20px 0;
-    position: relative;
-  }
-
-  .pipeline-step:not(:last-child)::after {
-    content: '';
-    position: absolute;
-    left: 15px;
-    top: 52px;
-    bottom: 0;
-    width: 1px;
-    background: var(--border);
-  }
-
-  .pipeline-step .step-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-
-  .pipeline-step .step-text h4 {
-    font-size: 14px;
-    font-weight: 600;
-    margin-bottom: 4px;
-  }
-
-  .pipeline-step .step-text p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.5;
-  }
-
-  /* Timeline */
-  .timeline {
-    margin: 40px 0 0;
+    gap: 14px;
   }
 
   .timeline-item {
-    padding: 16px 0;
-    display: flex;
-    gap: 20px;
-    align-items: baseline;
-  }
-
-  .timeline-item:not(:last-child) {
-    border-bottom: 1px solid var(--border);
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
   }
 
   .timeline-year {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-    flex-shrink: 0;
-    width: 48px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    margin-bottom: 6px;
   }
 
   .timeline-text {
-    font-size: 14px;
-    color: var(--text-secondary);
-    line-height: 1.5;
+    font-size: 0.96rem;
+    line-height: 1.7;
+    color: var(--muted);
   }
 
-  .timeline-text strong {
-    color: var(--text);
-    font-weight: 500;
+  .timeline-text strong { color: var(--ink); }
+
+  .links {
+    padding: 28px;
   }
 
-  /* Links / Footer */
-  .links-section {
-    padding: 80px 0 100px;
-  }
-
-  .link-row {
+  .link-list {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 24px;
+    gap: 14px 22px;
   }
 
-  .link-row a {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 20px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    transition: all 0.2s;
-    background: var(--surface);
+  .link-list a,
+  .topbar-links a {
+    color: var(--muted);
+    border-bottom: 1px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
   }
 
-  .link-row a:hover {
-    border-color: var(--accent);
-    background: var(--accent-dim);
+  .link-list a:hover,
+  .topbar-links a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
   }
 
-  .link-row a svg {
-    width: 16px;
-    height: 16px;
-    fill: currentColor;
-  }
-
-  footer {
-    padding: 40px 0;
-    border-top: 1px solid var(--border);
-    text-align: center;
-    font-size: 13px;
-    color: var(--text-secondary);
-  }
-
-  /* Mobile */
-  @media (max-width: 600px) {
-    .stats {
+  @media (max-width: 920px) {
+    .hero,
+    .grid {
       grid-template-columns: 1fr;
     }
 
-    nav .links { gap: 16px; }
-
-    .hero { min-height: 90vh; }
-
-    .timeline-item {
-      flex-direction: column;
-      gap: 4px;
+    .hero-copy {
+      min-height: auto;
     }
+  }
 
-    .link-row {
-      flex-direction: column;
-    }
-
-    .link-row a {
-      justify-content: center;
-    }
+  @media (max-width: 640px) {
+    .page { padding: 14px; }
+    .hero-copy,
+    .card,
+    .proof-body,
+    .links { padding: 22px; }
+    .topbar { flex-direction: column; align-items: flex-start; }
+    .summary-grid,
+    .metrics { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
 <body>
-
-<nav>
-  <div class="container">
-    <a href="#" class="logo">HH</a>
-    <div class="links">
-      <a href="#story">Story</a>
-      <a href="#building">Building</a>
-      <a href="#connect">Connect</a>
-    </div>
-  </div>
-</nav>
-
-<section class="hero">
-  <div class="container">
-    <div class="label">
-      <span class="dot"></span>
-      Building from Barcelona
-    </div>
-    <h1>Hovhannes<br>Hovhannisyan</h1>
-    <p class="subtitle">
-      I flew to LA, installed security cameras in people's homes, then built an AI system that runs the entire business without me. <strong>Now I do it from Barcelona.</strong>
-    </p>
-    <div class="scroll-hint">
-      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 3v10M4 9l4 4 4-4"/></svg>
-      Scroll
-    </div>
-  </div>
-</section>
-
-<section id="story">
-  <div class="container">
-    <div class="section-label">The Story</div>
-    <h2 class="section-title">From LA rooftops to<br>remote automation</h2>
-    <div class="prose">
-      <p>
-        I'm 25, Armenian, living in Barcelona. I spent 3.5 years as a PM at a big company. Quit. Tried a bunch of things — smart restaurant menus, an interview simulator, wine subscriptions. Some worked a little. None worked enough.
-      </p>
-      <p>
-        Then I found home services. I flew to Los Angeles, bought the tools, and started installing security cameras and smart home systems myself. Climbed on roofs. Ran cables through attics. Did the job so I could understand the job.
-      </p>
-      <p>
-        Once I understood the business end to end — lead, quote, schedule, install, collect — I automated it. Built an AI pipeline that catches incoming leads, researches the customer, writes a personalized response, and sends it back. <strong>Under 60 seconds. No human login needed.</strong>
-      </p>
-      <p>
-        Now I operate from Barcelona. Local technicians execute the jobs. The AI handles acquisition. I handle the system.
-      </p>
-    </div>
-
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="timeline-year">2019</span>
-        <span class="timeline-text">Started in corporate. Product management, 3.5 years. <strong>Quit to build.</strong></span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-year">2022</span>
-        <span class="timeline-text">First ventures — smart menus, interview sim, wine import. <strong>Learned what doesn't scale.</strong></span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-year">2024</span>
-        <span class="timeline-text">Flew to LA. Installed cameras with my own hands. <strong>Learned the trade.</strong></span>
-      </div>
-      <div class="timeline-item">
-        <span class="timeline-year">2025</span>
-        <span class="timeline-text">Built the AI pipeline. Moved back to Barcelona. <strong>Business runs remotely.</strong></span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="building">
-  <div class="container">
-    <div class="section-label">What I'm Building</div>
-    <h2 class="section-title">Novanest Pro</h2>
-    <div class="prose">
-      <p>
-        An AI-powered home services company operating across the US. Security cameras, smart locks, home automation — installed by local technicians, managed by software.
-      </p>
-      <p>
-        The moat isn't the code. It's that I did every job myself first. I know exactly what a $350 doorbell camera install looks like, what goes wrong, and what the customer actually cares about. That's why the AI works — it was trained on real experience, not guesses.
-      </p>
-    </div>
-
-    <div class="stats">
-      <div class="stat">
-        <div class="number">&lt;60s</div>
-        <div class="desc">Lead response</div>
-      </div>
-      <div class="stat">
-        <div class="number">0</div>
-        <div class="desc">Humans in loop</div>
-      </div>
-      <div class="stat">
-        <div class="number">100%</div>
-        <div class="desc">Remote ops</div>
+  <div class="page">
+    <div class="topbar">
+      <div class="topbar-name">Hovhannes Hovhannisyan</div>
+      <div class="topbar-links">
+        <a href="https://novanestpro.com" rel="noopener">Novanest Pro</a>
+        <a href="https://github.com/nova-novanest" rel="noopener">GitHub</a>
+        <a href="https://x.com/hovhanneshh" rel="noopener">X</a>
+        <a href="mailto:contact@novanestpro.com">contact@novanestpro.com</a>
       </div>
     </div>
 
-    <div class="section-label" style="margin-top: 48px;">How the AI pipeline works</div>
+    <section class="hero">
+      <div class="panel hero-copy">
+        <div>
+          <div class="eyebrow">Founder, Novanest Pro</div>
+          <h1>I built an AI that gets solo service pros their next job while they’re still doing the last one.</h1>
+          <p class="deck">
+            I flew to Los Angeles and worked as a handyman to understand what was actually breaking solo service businesses. Then I came back to Barcelona and built the system myself. <strong>Today it runs the lead-response and dispatch loop for a real US home services business.</strong>
+          </p>
+        </div>
 
-    <div class="pipeline">
-      <div class="pipeline-step">
-        <div class="step-icon">1</div>
-        <div class="step-text">
-          <h4>Lead comes in</h4>
-          <p>Webhook catches new Thumbtack leads instantly</p>
+        <div class="summary-grid">
+          <div>
+            <div class="summary-label">What I learned</div>
+            <div class="summary-value">The market does not reward the best pro. It rewards whoever replies first.</div>
+          </div>
+          <div>
+            <div class="summary-label">What this becomes</div>
+            <div class="summary-value">A personal AI operating layer for every solo plumber, electrician, handyman, and HVAC tech.</div>
+          </div>
         </div>
       </div>
-      <div class="pipeline-step">
-        <div class="step-icon">2</div>
-        <div class="step-text">
-          <h4>AI researches the customer</h4>
-          <p>Pulls context — location, request details, property info</p>
+
+      <div class="panel hero-proof">
+        <img src="hovo-ladder.jpg" alt="Hovhannes drilling while installing cameras in Los Angeles" class="hero-photo">
+        <div class="proof-body">
+          <div class="proof-kicker">Real proof</div>
+          <p class="proof-copy">
+            <strong>Los Angeles → Barcelona.</strong> I did the work myself first. The photo is from the field. The company came out of that, not the other way around.
+          </p>
+          <div class="metrics">
+            <div class="metric">
+              <div class="metric-number">125</div>
+              <div class="metric-label">Inbound leads handled</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number">27</div>
+              <div class="metric-label">Jobs won</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number">15</div>
+              <div class="metric-label">California cities</div>
+            </div>
+            <div class="metric">
+              <div class="metric-number">&lt;60s</div>
+              <div class="metric-label">Response time</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="pipeline-step">
-        <div class="step-icon">3</div>
-        <div class="step-text">
-          <h4>Generates a personalized reply</h4>
-          <p>Not a template. A real response tailored to their specific request</p>
+    </section>
+
+    <section class="grid">
+      <div class="panel card">
+        <div class="section-label">What is running now</div>
+        <div class="section-title">A live operating loop, not a demo.</div>
+        <p class="body-copy">
+          A Thumbtack lead comes in. The system researches the customer, prices the job, writes a personalized reply, sends it before any human competitor can, and dispatches a trained local technician. <strong>The goal is simple: let the skilled worker stay on the ladder while the AI wins the next job.</strong>
+        </p>
+        <div class="flow">
+          <div class="step">Lead intake</div>
+          <div class="step">Research</div>
+          <div class="step">Pricing</div>
+          <div class="step">Reply generation</div>
+          <div class="step">Sent in under 60s</div>
+          <div class="step">Local pro dispatched</div>
         </div>
       </div>
-      <div class="pipeline-step">
-        <div class="step-icon">4</div>
-        <div class="step-text">
-          <h4>Auto-sends within 60 seconds</h4>
-          <p>First to respond usually wins. The AI is always first</p>
+
+      <div class="panel card">
+        <div class="section-label">The non-obvious truth</div>
+        <div class="section-title">The hard part is not doing the work.</div>
+        <p class="body-copy">
+          The hard part is getting the next job while you’re still doing the last one. Skilled people lose not because they are bad at the craft, but because they are busy doing it when the next lead arrives.
+        </p>
+        <div class="quote">
+          Novanest Pro is the first instance of a larger idea: a personal AI operating layer for solo service workers. The AI should get the work, win the work, coordinate it, and let the pro just do the craft. <strong>The AI runs the business. The craftsman does the craft.</strong>
         </div>
       </div>
-      <div class="pipeline-step">
-        <div class="step-icon">5</div>
-        <div class="step-text">
-          <h4>Dispatches local technician</h4>
-          <p>Job gets scheduled and assigned. Technician shows up, does the work</p>
+    </section>
+
+    <section class="grid">
+      <div class="panel card">
+        <div class="section-label">Why me</div>
+        <div class="section-title">I learned the market from inside the job.</div>
+        <p class="body-copy">
+          I did not start with software. I started by physically doing installations in Los Angeles, losing the same jobs other pros lose, and reverse-engineering what was actually happening. That is why the product is not a generic AI wrapper. It comes from the bottleneck I felt myself.
+        </p>
+      </div>
+
+      <div class="panel card">
+        <div class="section-label">Path</div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">2020</div>
+            <div class="timeline-text"><strong>Co-founded Interview Simulation</strong>, my first AI startup. Won early competitions and a $100K investment offer; the company didn't make it past demos. The lesson stuck.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2021–2024</div>
+            <div class="timeline-text"><strong>Led product</strong> and launched <a href="https://www.betconstruct.com/products/dataspot" rel="noopener" style="color:var(--accent);border-bottom:1px solid var(--accent);">Dataspot</a> — an analytics platform inside BetConstruct that still ships across their global partner network and generates revenue years later.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2025</div>
+            <div class="timeline-text"><strong>Flew to Los Angeles</strong> and worked the jobs myself to understand the market from the inside.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <div class="timeline-text"><strong>Built the operating layer</strong> and now run a US service business from Barcelona.</div>
+          </div>
         </div>
+      </div>
+    </section>
+
+    <div class="panel card" style="margin-bottom: 22px;">
+      <div class="section-label">Working with me</div>
+      <div class="section-title">Looking for solo pros to test the next version with.</div>
+      <p class="body-copy">
+        The next version of Novanest is a personal AI agent that connects directly to one service pro — handyman, plumber, electrician, locksmith, HVAC tech — and runs the business side of their work for them. I'm looking for a small group of solo pros to test it on real Thumbtack accounts. If that's you, or someone you know, get in touch.
+      </p>
+      <p style="margin-top: 22px;">
+        <a href="mailto:contact@novanestpro.com" style="display:inline-block;padding:14px 22px;background:var(--accent);color:#fff;font-weight:700;font-size:0.95rem;letter-spacing:0.02em;">Email me → contact@novanestpro.com</a>
+      </p>
+    </div>
+
+    <div class="panel links">
+      <div class="section-label">More proof</div>
+      <div class="link-list">
+        <a href="https://novanestpro.com" rel="noopener">Novanest Pro</a>
+        <a href="https://github.com/nova-novanest" rel="noopener">GitHub</a>
+        <a href="https://x.com/hovhanneshh" rel="noopener">X</a>
+        <a href="https://linkedin.com/in/hovhannes-hovhannisyan-a06497232" rel="noopener">LinkedIn</a>
+        <a href="mailto:contact@novanestpro.com">contact@novanestpro.com</a>
       </div>
     </div>
   </div>
-</section>
-
-<section id="connect" class="links-section">
-  <div class="container">
-    <div class="section-label">Connect</div>
-    <h2 class="section-title">Let's talk</h2>
-    <div class="link-row">
-      <a href="mailto:contact@novanestpro.com">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-        contact@novanestpro.com
-      </a>
-      <a href="https://github.com/nova-novanest" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
-      </a>
-      <a href="https://linkedin.com/in/hovhannes-hovhannisyan-a06497232" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    Hovhannes Hovhannisyan · Barcelona · 2025
-  </div>
-</footer>
-
 </body>
 </html>
